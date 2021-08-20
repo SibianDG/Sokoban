@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<fx:root fx:id="mainGridPane" maxHeight="775.0" maxWidth="750.0" minHeight="675.0" minWidth="600.0" prefHeight="775.0" prefWidth="750.0" stylesheets="@../start/styles.css" type="GridPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="750.0" prefWidth="750.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <GridPane prefHeight="75.0" prefWidth="600.0" styleClass="appelblauwzeegroen">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="135.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="480.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="135.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="SOKOBAN" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="500.0" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Calibri Bold" size="48.0" />
+               </font>
+            </Text>
+            <Button fx:id="btnTerug" mnemonicParsing="false" onAction="#btnTerugOnAction" prefHeight="35.0" prefWidth="130.0" styleClass="btn-terug" text="&lt; Terug">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btnNext" alignment="CENTER" mnemonicParsing="false" onAction="#btnNextOnAction" prefHeight="35.0" prefWidth="130.0" styleClass="btn-terug" text="Verder Gaan" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </GridPane>
+      <GridPane GridPane.rowIndex="2">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="600.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="660.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <GridPane fx:id="spelbord" maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" prefHeight="600.0" prefWidth="600.0" GridPane.columnIndex="1">
+              <rowConstraints>
+                  <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <columnConstraints>
+                  <ColumnConstraints maxWidth="-Infinity" minWidth="60.0" prefWidth="60.0" />
+                  <ColumnConstraints minWidth="10.0" prefWidth="60.0" />
+                  <ColumnConstraints minWidth="60.0" prefWidth="60.0" />
+                  <ColumnConstraints minWidth="60.0" prefWidth="60.0" />
+                  <ColumnConstraints minWidth="60.0" prefWidth="60.0" />
+                  <ColumnConstraints minWidth="60.0" prefWidth="60.0" />
+                  <ColumnConstraints minWidth="60.0" prefWidth="60.0" />
+                  <ColumnConstraints minWidth="60.0" prefWidth="60.0" />
+                  <ColumnConstraints minWidth="60.0" prefWidth="60.0" />
+                  <ColumnConstraints minWidth="60.0" prefWidth="60.0" />
+               </columnConstraints>
+            </GridPane>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text fx:id="txtVeld" strokeType="OUTSIDE" strokeWidth="0.0" text="Veld" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="imvVeld" fitHeight="100.0" fitWidth="100.0" onDragDetected="#imvOnDrag" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../pictures/veld.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="txtMuur" strokeType="OUTSIDE" strokeWidth="0.0" text="Muur" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="imvMuur" fitHeight="100.0" fitWidth="100.0" onDragDetected="#imvOnDrag" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../pictures/muur.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="txtDoel" strokeType="OUTSIDE" strokeWidth="0.0" text="Doel" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="imvDoel" fitHeight="100.0" fitWidth="100.0" onDragDetected="#imvOnDrag" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../pictures/doel.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="txtKist" strokeType="OUTSIDE" strokeWidth="0.0" text="Kist" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="imvKist" fitHeight="100.0" fitWidth="100.0" onDragDetected="#imvOnDrag" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../pictures/kist.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="txtMan" strokeType="OUTSIDE" strokeWidth="0.0" text="Man" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="imvMan" fitHeight="100.0" fitWidth="100.0" onDragDetected="#imvOnDrag" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../pictures/speler.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+      <GridPane GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="750.0" prefWidth="750.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <GridPane>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="175.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="575.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btnMaakOngedaan" mnemonicParsing="false" onAction="#btnMaakOngedaanOnAction" prefHeight="35.0" prefWidth="130.0" styleClass="activeButton" text="Button">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin></Button>
+                  <Text fx:id="txtDragDrop" strokeType="OUTSIDE" strokeWidth="0.0" text="Wijzig Spelbord: Drag and Drop" textAlignment="CENTER" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Calibri Bold" size="27.0" />
+                     </font>
+                  </Text>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</fx:root>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<fx:root fx:id="gridMaakNieuwSpel" stylesheets="@../start/styles.css" type="GridPane" vgap="15.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <rowConstraints>
+      <RowConstraints minHeight="70.0" prefHeight="70.0" />
+      <RowConstraints minHeight="10.0" prefHeight="10.0" />
+      <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="20.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="15.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="10.0" />
+    </rowConstraints>
+    <columnConstraints>
+      <ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="115.0" />
+      <ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="270.0" />
+        <ColumnConstraints maxWidth="-Infinity" minWidth="-Infinity" prefWidth="115.0" />
+    </columnConstraints>
+   <children>
+      <GridPane styleClass="appelblauwzeegroen" GridPane.columnSpan="3">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="115.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="270.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="115.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text fx:id="titelMaakNieuwSpel" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="288.99993896484375" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Text>
+            <Button fx:id="btnVorige" mnemonicParsing="false" onAction="#btnVorigeOnAction" prefHeight="35.0" prefWidth="123.0" styleClass="btn-terug" text="Vorige" GridPane.halignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+      <Button fx:id="btnVolgende" maxHeight="1.7976931348623157E308" maxWidth="200.0" mnemonicParsing="false" onAction="#btnVolgendeOnAction" prefHeight="35.0" prefWidth="200.0" styleClass="btn-white" text="Volgende" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="txfSpelnaam" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label fx:id="lblSpelnaam" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="200.0" styleClass="appelblauwzeegroen" text="Spelnaam" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <HBox fx:id="hboxFout" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="foutmeldingHBox" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="!">
+               <font>
+                  <Font name="Calibri Bold" size="37.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtFout" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="185.0">
+               <font>
+                  <Font name="Calibri" size="13.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+   </children>
+   <styleClass>
+      <String fx:value="gridpane" />
+      <String fx:value="bg2" />
+   </styleClass>
+</fx:root>
